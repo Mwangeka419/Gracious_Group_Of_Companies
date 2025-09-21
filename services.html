@@ -1,0 +1,229 @@
+<?php include("db.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Gracious Tent's & Sounds (G.T.S)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; }
+    .services-container { padding: 50px 0; }
+    h2 { font-weight: bold; margin-bottom: 30px; color: #1E3A8A; }
+    .card { border-radius: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-8px); }
+    .card img { height: 200px; object-fit: cover; }
+    .card-body { padding: 20px; }
+    .card-title { font-size: 1.1rem; font-weight: bold; color: #000; }
+    .card-text { font-size: 0.95rem; color: #555; }
+    footer { background: #000; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+    .navbar { background: #000; }
+    .navbar a { color: #fff !important; font-weight: 500; }
+    /* Sidebar */
+    .sidebar { 
+      background: #f1f3f6; 
+      padding: 20px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+      position: sticky; 
+      top: 100px; 
+    }
+    .sidebar h4 { 
+      font-size: 1.1rem; 
+      margin-bottom: 15px; 
+      font-weight: bold; 
+      color: #fff; 
+      background: #1E3A8A; 
+      padding: 12px; 
+      border-radius: 8px;
+    }
+    .list-group-item { 
+      border: none; 
+      padding: 5px 0; 
+      font-size: 0.95rem; 
+      background: transparent;
+    }
+    .list-group-item a { 
+      text-decoration: none; 
+      color: #333; 
+      display: block; 
+      transition: 0.3s; 
+      padding: 8px; 
+      border-radius: 8px;
+    }
+    .list-group-item a:hover, 
+    .list-group-item a.active { 
+      color: #fff; 
+      background: #1E3A8A; 
+      font-weight: bold;
+      padding-left: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<?php $current_page = basename($_SERVER['PHP_SELF']); ?>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.php">
+      <img src="images/logo.png" alt="G.T.S Logo" style="height:50px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="services.php" class="nav-link active">Services</a></li>
+        <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Services Section -->
+<div class="container services-container">
+  <div class="row">
+    
+    <!-- Sidebar Left -->
+    <div class="col-md-3">
+      <div class="sidebar">
+        <h4>Our Services</h4>
+        <div class="list-group">
+          <div class="list-group-item"><a href="service-tents.php" class="<?php echo ($current_page=='service-tents.php')?'active':''; ?>"><i class="bi bi-house-door me-2"></i> Tents, Chairs & Tables Hire</a></div>
+          <div class="list-group-item"><a href="service-funeral.php" class="<?php echo ($current_page=='service-funeral.php')?'active':''; ?>"><i class="bi bi-cup-straw me-2"></i> Gracious Funeral Services</a></div>
+          <div class="list-group-item"><a href="service-decorations.php" class="<?php echo ($current_page=='service-decorations.php')?'active':''; ?>"><i class="bi bi-stars me-2"></i> Decorations</a></div>
+          <div class="list-group-item"><a href="service-planning.php" class="<?php echo ($current_page=='service-planning.php')?'active':''; ?>"><i class="bi bi-calendar-event me-2"></i> Event & Party Planning</a></div>
+          <div class="list-group-item"><a href="service-toilets.php" class="<?php echo ($current_page=='service-toilets.php')?'active':''; ?>"><i class="bi bi-droplet-half me-2"></i> Portable & Mobile Toilets</a></div>
+          <div class="list-group-item"><a href="service-equipment.php" class="<?php echo ($current_page=='service-equipment.php')?'active':''; ?>"><i class="bi bi-lightning me-2"></i> Event Equipment</a></div>
+          <div class="list-group-item"><a href="service-accessories.php" class="<?php echo ($current_page=='service-accessories.php')?'active':''; ?>"><i class="bi bi-gift me-2"></i> Party Accessories & Décor</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Grid Right -->
+    <div class="col-md-9">
+      <h2 class="text-center">Explore Our Services</h2>
+      <div class="row g-4">
+
+        <!-- Service 1 -->
+        <div class="col-md-6">
+          <a href="service-tents.php" class="text-decoration-none">
+            <div class="card">
+              <img src="images/tents.jpg" class="card-img-top" alt="Tents & Furniture">
+              <div class="card-body">
+                <h5 class="card-title">Tent Hiring and Selling</h5>
+                <p class="card-text">Wide range of tents, chairs, tables and furniture for weddings, corporate events, and private functions.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-md-6">
+          <a href="service-funeral.php" class="text-decoration-none">
+            <div class="card">
+              <img src="images/tableware.jpg" class="card-img-top" alt="Gracious funeral service">
+              <div class="card-body">
+                <h5 class="card-title">Gracious Funeral Services</h5>
+                <p class="card-text">Hearse hire, coffins, and dignified funeral coordination.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-md-6">
+          <a href="service-decorations.php" class="text-decoration-none">
+            <div class="card">
+              <img src="images/decorations.jpg" class="card-img-top" alt="Decorations">
+              <div class="card-body">
+                <h5 class="card-title">Decorations</h5>
+                <p class="card-text">Balloon decorations, themed backdrops, and customized event styling to make your event unforgettable.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-md-6">
+          <a href="service-planning.php" class="text-decoration-none">
+            <div class="card">
+              <img src="images/party.jpg" class="card-img-top" alt="Party Planning">
+              <div class="card-body">
+                <h5 class="card-title">Event & Party Planning</h5>
+                <p class="card-text">Comprehensive planning for birthdays, weddings, corporate functions, and themed parties.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-md-6">
+          <a href="service-toilets.php" class="text-decoration-none">
+            <div class="card">
+              <img src="images/toilet.jpg" class="card-img-top" alt="Mobile Toilets">
+              <div class="card-body">
+                <h5 class="card-title">Portable & Mobile Toilets</h5>
+                <p class="card-text">Standard and VIP portable toilets available for hire to ensure comfort at your events.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-md-6">
+          <a href="service-equipment.php" class="text-decoration-none">
+            <div class="card">
+              <img src="images/equipment.jpg" class="card-img-top" alt="Event Equipment">
+              <div class="card-body">
+                <h5 class="card-title">Event Equipment</h5>
+                <p class="card-text">PA systems, stage setups, lighting, and generators to power your events seamlessly.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="col-md-6">
+          <a href="service-accessories.php" class="text-decoration-none">
+            <div class="card">
+              <img src="images/accessories.jpg" class="card-img-top" alt="Accessories">
+              <div class="card-body">
+                <h5 class="card-title">Party Accessories & Décor</h5>
+                <p class="card-text">Photo booths, party signage, props, and extra décor add-ons for a memorable event experience.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div>
+        <strong>Gracious Group Of Companies</strong><br>
+        <small class="text-muted">Tents • Sound • Events • Funeral Services</small>
+      </div>
+      <div class="text-center mt-3 mt-md-0">
+        <small>© <?php echo date("Y"); ?> Gracious Tent's & Sounds. All Rights Reserved.</small><br>
+        <small>Designed by <strong>Skyline Digital Solutions</strong></small>
+      </div>
+      <div class="text-md-end mt-3 mt-md-0">
+        <a href="tel:+254 736 173 338" class="text-decoration-none" style="color:#dbeafe"><i class="fa-solid fa-phone me-2"></i>+254 736 173 338</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

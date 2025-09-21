@@ -1,0 +1,194 @@
+<?php include("db.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tents Hiring & Sales - Gracious Tent's & Sounds (G.T.S)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .navbar { background: #000; }
+    .navbar a { color: #fff !important; font-weight: 500; }
+    .navbar a:hover { color: #3B82F6 !important; }
+
+    .service-header {
+      background: url('images/tents-bg.jpg') center/cover no-repeat;
+      height: 45vh; display: flex; align-items: center; justify-content: center;
+      color: white; position: relative; text-align: center;
+    }
+    .service-header::after {
+      content: ""; position: absolute; top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.6);
+    }
+    .service-header h1 { position: relative; z-index: 2; font-size: 3rem; font-weight: bold; }
+
+    .content { padding: 60px 20px; }
+    .sidebar { background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+    .sidebar h4 { font-weight: bold; color: #1E3A8A; margin-bottom: 20px; }
+    .sidebar a { display: block; margin-bottom: 10px; color: #000; text-decoration: none; }
+    .sidebar a:hover { color: #3B82F6; }
+
+    .service-content h2 { color: #1E3A8A; font-weight: bold; margin-bottom: 20px; }
+    .service-content p { font-size: 1.05rem; color: #444; }
+
+    .gallery img { border-radius: 10px; margin-bottom: 20px; transition: transform 0.3s; cursor: pointer; }
+    .gallery img:hover { transform: scale(1.05); }
+
+    footer { background: #000; color: #fff; text-align: center; padding: 25px; margin-top: 40px; }
+    footer p { margin: 5px 0; font-size: 0.95rem; }
+
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #25D366; color: white; border-radius: 50%;
+      width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;
+    }
+    .whatsapp-float:hover { background: #20b954; color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.php">
+      <img src="images/Logo.jpg" alt="G.T.S Logo" style="height:50px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="services.php" class="nav-link active">Services</a></li>
+        <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<section class="service-header">
+  <h1>Tents Hiring & Sales</h1>
+</section>
+
+<!-- Main Content -->
+<section class="content container">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 sidebar">
+      <h4>Our Services</h4>
+      <a href="service-tents.php" class="fw-bold text-primary">Tents Hiring & Sales</a>
+      <a href="service-equipment.php">Sound Systems & Equipment</a>
+      <a href="service-toilets.php">Portable Toilets</a>
+      <a href="service-funeral.php">Funeral Services</a>
+      <a href="services.php">All Services</a>
+    </div>
+
+    <!-- Service Content -->
+    <div class="col-md-9 service-content">
+      <h2>Your Trusted Partner in Tents</h2>
+      <p>
+        At <strong>Gracious Tent's & Sounds (G.T.S)</strong>, we specialize in providing high-quality tents tailored 
+        for every type of occasion. Whether it’s a wedding, church crusade, political gathering, corporate launch, 
+        or a private family celebration, our tents are designed to deliver elegance, comfort, and durability.
+      </p>
+      <p>
+        We offer a wide selection of tents to match your style, theme, and budget:
+      </p>
+      <ul>
+        <li>✔ Dome tents for elegant weddings</li>
+        <li>✔ Canopy tents for casual outdoor parties</li>
+        <li>✔ Peg & pole tents for large events and rallies</li>
+        <li>✔ VIP & executive tents for special occasions</li>
+        <li>✔ Customized branded tents for corporate branding</li>
+      </ul>
+      <p>
+        Beyond just tents, we provide <strong>chairs, tables, furniture, lighting, and full décor setup</strong> 
+        to create the perfect atmosphere for your event. Our team handles delivery, setup, and takedown – 
+        giving you peace of mind and ensuring your event runs smoothly.
+      </p>
+
+      <!-- Gallery -->
+      <div class="row gallery">
+        <div class="col-md-4">
+          <img src="images/tent1.jpg" class="img-fluid" alt="Event Tent" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-slide-to="0">
+        </div>
+        <div class="col-md-4">
+          <img src="images/tent2.jpg" class="img-fluid" alt="Wedding Tent" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-slide-to="1">
+        </div>
+        <div class="col-md-4">
+          <img src="images/tent3.jpg" class="img-fluid" alt="Corporate Tent" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-slide-to="2">
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-4 text-center">
+        <a href="contact.php" class="btn btn-primary btn-lg"><i class="fas fa-quote-right"></i> Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal with Carousel -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-body p-0">
+        <div id="carouselLightbox" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/tent1.jpg" class="d-block w-100" alt="Tent 1">
+            </div>
+            <div class="carousel-item">
+              <img src="images/tent2.jpg" class="d-block w-100" alt="Tent 2">
+            </div>
+            <div class="carousel-item">
+              <img src="images/tent3.jpg" class="d-block w-100" alt="Tent 3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightbox" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselLightbox" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer bg-dark border-0">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; <?php echo date("Y"); ?> Gracious Tent's & Sounds (G.T.S). All Rights Reserved.</p>
+  <p>Designed by <strong>Skyline Digital Solutions</strong></p>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254798008379" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Ensure correct image opens when clicked
+  const galleryImages = document.querySelectorAll('.gallery img');
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      const carousel = new bootstrap.Carousel(document.getElementById('carouselLightbox'));
+      carousel.to(index);
+    });
+  });
+</script>
+</body>
+</html>

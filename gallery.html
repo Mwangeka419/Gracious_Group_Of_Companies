@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - G.T.S</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+    }
+    .gallery-container {
+      padding: 60px 20px;
+    }
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #007bff;
+    }
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* Modal styling */
+    .modal-img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.php">G.T.S</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.php">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <div class="container gallery-container">
+    <h2>Our Event Gallery</h2>
+    <div class="row g-4 gallery">
+
+      <!-- Image 1 -->
+      <div class="col-md-4">
+        <img src="images/30.jpg" alt="Event Setup" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showImage(this.src)">
+      </div>
+
+      <!-- Image 2 -->
+      <div class="col-md-4">
+        <img src="images/60.jpg" alt="Wedding Tent" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showImage(this.src)">
+      </div>
+
+      <!-- Image 3 -->
+      <div class="col-md-4">
+        <img src="images/71.jpg" alt="Birthday Setup" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showImage(this.src)">
+      </div>
+
+      <!-- Image 4 -->
+      <div class="col-md-4">
+        <img src="images/Event10.jpg" alt="PA System" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showImage(this.src)">
+      </div>
+
+      <!-- Image 5 -->
+      <div class="col-md-4">
+        <img src="images/87.jpg" alt="Event Decoration" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showImage(this.src)">
+      </div>
+
+      <!-- Image 6 -->
+      <div class="col-md-4">
+        <img src="images/62.jpg" alt="Outdoor Setup" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showImage(this.src)">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal for Lightbox -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <img src="" class="modal-img" id="modalImage">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function showImage(src) {
+      document.getElementById("modalImage").src = src;
+    }
+  </script>
+</body>
+</html>

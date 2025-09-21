@@ -1,0 +1,177 @@
+<?php include("db.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portable & Mobile Toilets - GRACIOUS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; }
+    .service-container { padding: 50px 0; }
+    h2 { font-weight: bold; margin-bottom: 20px; color: #1E3A8A; }
+    h3 { font-weight: 600; margin-top: 30px; color: #1E3A8A; }
+    p { font-size: 1rem; color: #444; line-height: 1.7; }
+    .service-img { border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    footer { background: #000; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+    .navbar { background: #000; }
+    .navbar a { color: #fff !important; font-weight: 500; }
+    /* Sidebar */
+    .sidebar { 
+      background: #f1f3f6; 
+      padding: 20px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+      position: sticky; 
+      top: 100px; 
+    }
+    .sidebar h4 { 
+      font-size: 1.1rem; 
+      margin-bottom: 15px; 
+      font-weight: bold; 
+      color: #fff; 
+      background: #1E3A8A; 
+      padding: 12px; 
+      border-radius: 8px;
+    }
+    .list-group-item { 
+      border: none; 
+      padding: 5px 0; 
+      font-size: 0.95rem; 
+      background: transparent;
+    }
+    .list-group-item a { 
+      text-decoration: none; 
+      color: #333; 
+      display: block; 
+      transition: 0.3s; 
+      padding: 8px; 
+      border-radius: 8px;
+    }
+    .list-group-item a:hover, 
+    .list-group-item a.active { 
+      color: #fff; 
+      background: #1E3A8A; 
+      font-weight: bold;
+      padding-left: 15px;
+    }
+    .gallery img {
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<?php $current_page = basename($_SERVER['PHP_SELF']); ?>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.php">
+      <img src="images/Logo.jpg" alt="G.T.S Logo" style="height:50px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="services.php" class="nav-link active">Services</a></li>
+        <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Service Page Content -->
+<div class="container service-container">
+  <div class="row">
+    
+    <!-- Sidebar Left -->
+    <div class="col-md-3">
+      <div class="sidebar">
+        <h4>Our Services</h4>
+        <div class="list-group">
+          <div class="list-group-item"><a href="service-tents.php"><i class="bi bi-house-door me-2"></i> Tents, Chairs & Tables Hire</a></div>
+          <div class="list-group-item"><a href="service-tableware.php"><i class="bi bi-cup-straw me-2"></i> Tableware & Centerpieces</a></div>
+          <div class="list-group-item"><a href="service-decorations.php"><i class="bi bi-stars me-2"></i> Decorations</a></div>
+          <div class="list-group-item"><a href="service-planning.php"><i class="bi bi-calendar-event me-2"></i> Event & Party Planning</a></div>
+          <div class="list-group-item"><a href="service-toilets.php" class="active"><i class="bi bi-droplet-half me-2"></i> Portable & Mobile Toilets</a></div>
+          <div class="list-group-item"><a href="service-equipment.php"><i class="bi bi-lightning me-2"></i> Event Equipment</a></div>
+          <div class="list-group-item"><a href="service-accessories.php"><i class="bi bi-gift me-2"></i> Party Accessories & Décor</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Content Right -->
+    <div class="col-md-9">
+      <h2>Portable & Mobile Toilets for Hire</h2>
+      <p>
+        At <strong>Gracious </strong>, we specialize in providing <strong>portable and mobile toilets for hire in Coast Region and across Kenya</strong>. 
+        Our units are perfect for <em>weddings, corporate events, concerts, festivals, construction sites, and private functions</em>. 
+        With us, you are guaranteed <strong>clean, hygienic, and reliable sanitation solutions</strong>.
+      </p>
+
+      <h3>Types of Toilets We Offer</h3>
+      <ul>
+        <li><strong>Standard Portable Toilets</strong> – Affordable, simple, and effective for large crowds.</li>
+        <li><strong>VIP Executive Toilets</strong> – Stylish, spacious, with flushing systems, hand-washing stations, mirrors & lighting.</li>
+        <li><strong>Mobile Trailer Toilets</strong> – High-capacity units ideal for luxury weddings & high-end corporate events.</li>
+      </ul>
+
+      <h3>Why Choose Our Portable Toilets?</h3>
+      <ul>
+        <li>🚻 Clean & well-maintained units.</li>
+        <li>✨ VIP options with premium comfort.</li>
+        <li>🧼 Regular servicing during events.</li>
+        <li>🚚 Timely delivery and setup anywhere in Kenya.</li>
+        <li>✅ Affordable packages for all budgets.</li>
+      </ul>
+
+      <h3>Gallery – Our Toilets in Action</h3>
+      <div class="row gallery">
+        <div class="col-md-6">
+          <img src="images/toilet1.jpg" alt="Standard Portable Toilet" class="img-fluid">
+          <p><small>Standard Portable Toilet</small></p>
+        </div>
+        <div class="col-md-6">
+          <img src="images/toilet2.jpg" alt="VIP Executive Toilet" class="img-fluid">
+          <p><small>VIP Executive Toilet</small></p>
+        </div>
+        <div class="col-md-6">
+          <img src="images/toilet3.jpg" alt="Mobile Trailer Toilet" class="img-fluid">
+          <p><small>Mobile Trailer Toilet</small></p>
+        </div>
+        <div class="col-md-6">
+          <img src="images/toilet4.jpg" alt="Toilets Setup at Event" class="img-fluid">
+          <p><small>Event Setup</small></p>
+        </div>
+      </div>
+
+      <h3>Book Portable Toilets for Your Event</h3>
+      <p>
+        Contact us today for <strong>affordable and reliable portable toilet hire services</strong>. 
+        We guarantee comfort and hygiene for your guests. 
+        Call us now or <a href="contact.php">request a free quote</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; <?php echo date("Y"); ?> Gracious Tent's & Sounds (G.T.S). All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

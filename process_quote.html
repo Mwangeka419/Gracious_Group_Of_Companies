@@ -1,0 +1,85 @@
+<?php
+// process_quote.php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect form data
+    $name       = htmlspecialchars(trim($_POST['name']));
+    $phone      = htmlspecialchars(trim($_POST['phone']));
+    $email      = htmlspecialchars(trim($_POST['email']));
+    $service    = htmlspecialchars(trim($_POST['service']));
+    $event_date = htmlspecialchars(trim($_POST['event_date']));
+    $message    = htmlspecialchars(trim($_POST['message']));
+
+    // Company email (change this to your real email)
+    $to = "info@gts.co.ke";
+
+    // -------- Email to Admin --------
+    $subject_admin = "New Quote Request from $name";
+
+    $body_admin = "
+    You have received a new quote request from the G.T.S Website:
+
+    Name: $name
+    Phone: $phone
+    Email: $email
+    Service: $service
+    Event Date: $event_date
+
+    Message:
+    $message
+    ";
+
+    $headers_admin = "From: $name <$email>\r\n";
+    $headers_admin .= "Reply-To: $email\r\n";
+    $headers_admin .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    // -------- Email to Client --------
+    $subject_client = "Thank you for your request - Gracious Tent's and Sounds (G.T.S)";
+
+    $body_client = "
+    Dear $name,
+
+    Thank you for reaching out to Gracious Tent's and Sounds.
+    We have received your request and our team will get back to you shortly.
+
+    Here are the details you submitted:
+    ------------------------------------
+    Service: $service
+    Event Date: $event_date
+    Message: $message
+    ------------------------------------
+
+    For urgent inquiries, please call us directly at +254 7XX XXX XXX.
+
+    Best regards,  
+    Gracious Tent's and Sounds (G.T.S)
+    ";
+
+    $headers_client = "From: G.T.S <info@gts.co.ke>\r\n";
+    $headers_client .= "Reply-To: info@gts.co.ke\r\n";
+    $headers_client .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    // Send both emails
+    $mail_admin  = mail($to, $subject_admin, $body_admin, $headers_admin);
+    $mail_client = mail($email, $subject_client, $body_client, $headers_client);
+
+    if ($mail_admin && $mail_client) {
+        echo "
+        <script>
+            alert('Thank you $name, your request has been sent successfully! A confirmation email has been sent to you.');
+            window.location.href = 'index.php';
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('Sorry, something went wrong. Please try again later.');
+            window.location.href = 'index.php';
+        </script>
+        ";
+    }
+} else {
+    header("Location: index.php");
+    exit();
+}
+?>
